@@ -62,10 +62,9 @@ function parse(lines)
   for line in lines
     found = false
 
-    for [rule, method] in expressions
-      if rule.exec line
-        str.push method that
-        found = true
+    for [rule, method] in expressions when rule.exec line
+      str.push method that
+      found = true
 
     throw new Error "Cannot parse : #line" unless found
 
